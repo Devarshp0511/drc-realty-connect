@@ -160,7 +160,7 @@ const HeroSection = () => {
                 <div className="space-y-4">
                   {[
                     { brand: "Zudio", location: "A. Shridhar Complex", city: "Ahmedabad" },
-                    { brand: "Croma", location: "Phoenix Mall", city: "Mumbai" },
+                    { brand: "Croma", location: "Phoenix Mall", city: "Ahmedabad" },
                     { brand: "Style Union", location: "VR Mall", city: "Chennai" },
                   ].map((deal, index) => (
                     <motion.div
