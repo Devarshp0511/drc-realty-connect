@@ -13,7 +13,6 @@ const authSchema = z.object({
 });
 
 const Auth = () => {
-  const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -56,19 +55,9 @@ const Auth = () => {
     setIsLoading(true);
 
     try {
-      if (isLogin) {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
-        toast({ title: "Welcome back!", description: "You have successfully logged in." });
-      } else {
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: { emailRedirectTo: `${window.location.origin}/admin` }
-        });
-        if (error) throw error;
-        toast({ title: "Account created!", description: "You can now access the admin panel." });
-      }
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) throw error;
+      toast({ title: "Welcome back!", description: "You have successfully logged in." });
     } catch (error: any) {
       toast({
         title: "Error",
@@ -99,10 +88,10 @@ const Auth = () => {
         <div className="glass-card rounded-2xl p-8">
           <div className="text-center mb-8">
             <h1 className="font-display font-bold text-3xl text-foreground mb-2">
-              {isLogin ? "Admin Login" : "Create Account"}
+              Admin Login
             </h1>
             <p className="text-muted-foreground">
-              {isLogin ? "Sign in to view contact submissions" : "Register for admin access"}
+              Sign in to view contact submissions
             </p>
           </div>
 
@@ -164,23 +153,13 @@ const Auth = () => {
               {isLoading ? (
                 <>
                   <Loader2 className="w-5 h-5 animate-spin" />
-                  {isLogin ? "Signing in..." : "Creating account..."}
+                  Signing in...
                 </>
               ) : (
-                isLogin ? "Sign In" : "Create Account"
+                "Sign In"
               )}
             </Button>
           </form>
-
-          <div className="mt-6 text-center">
-            <button
-              type="button"
-              onClick={() => setIsLogin(!isLogin)}
-              className="text-sm text-muted-foreground hover:text-accent transition-colors"
-            >
-              {isLogin ? "Need an account? Sign up" : "Already have an account? Sign in"}
-            </button>
-          </div>
 
           <div className="mt-6 text-center">
             <a href="/" className="text-sm text-muted-foreground hover:text-accent transition-colors">

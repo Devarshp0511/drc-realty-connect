@@ -21,9 +21,43 @@ interface ContactSubmission {
 const Admin = () => {
   const [submissions, setSubmissions] = useState<ContactSubmission[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isCheckingAdmin, setIsCheckingAdmin] = useState(true);
   const [selectedSubmission, setSelectedSubmission] = useState<ContactSubmission | null>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
+
+  const checkAdminRole = async (userId: string) => {
+    try {
+      const { data, error } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", userId)
+        .eq("role", "admin")
+        .maybeSingle();
+
+      if (error) throw error;
+      
+      if (!data) {
+        toast({
+          title: "Access Denied",
+          description: "You do not have admin privileges.",
+          variant: "destructive",
+        });
+        await supabase.auth.signOut();
+        navigate("/auth");
+        return false;
+      }
+      return true;
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: "Failed to verify admin access.",
+        variant: "destructive",
+      });
+      navigate("/auth");
+      return false;
+    }
+  };
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
@@ -32,11 +66,15 @@ const Admin = () => {
       }
     });
 
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
       if (!session) {
         navigate("/auth");
       } else {
-        fetchSubmissions();
+        const isAdmin = await checkAdminRole(session.user.id);
+        setIsCheckingAdmin(false);
+        if (isAdmin) {
+          fetchSubmissions();
+        }
       }
     });
 
@@ -91,7 +129,7 @@ const Admin = () => {
 
   const unreadCount = submissions.filter(s => !s.is_read).length;
 
-  if (isLoading) {
+  if (isLoading || isCheckingAdmin) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <Loader2 className="w-8 h-8 animate-spin text-accent" />
