@@ -11,7 +11,6 @@ import { z } from "zod";
 // Form validation schema
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
-  company: z.string().trim().min(2, "Company name is required").max(100, "Company name must be less than 100 characters"),
   email: z.string().trim().email("Please enter a valid email address").max(255, "Email must be less than 255 characters"),
   phone: z.string().trim().regex(/^[+]?[\d\s-]{10,15}$/, "Please enter a valid phone number"),
   message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters"),
@@ -26,7 +25,6 @@ const ContactSection = () => {
   
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
-    company: "",
     email: "",
     phone: "",
     message: "",
@@ -68,7 +66,7 @@ const ContactSection = () => {
         .from("contact_submissions")
         .insert({
           name: formData.name.trim(),
-          company: formData.company.trim(),
+          company: "",
           email: formData.email.trim(),
           phone: formData.phone.trim(),
           message: formData.message.trim(),
@@ -85,7 +83,7 @@ const ContactSection = () => {
       // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
-        setFormData({ name: "", company: "", email: "", phone: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "" });
       }, 3000);
     } catch (error: any) {
       toast({
@@ -234,48 +232,25 @@ const ContactSection = () => {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    {/* Name */}
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-lg bg-background border ${
-                          errors.name ? "border-destructive" : "border-input"
-                        } focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors`}
-                        placeholder="John Doe"
-                      />
-                      {errors.name && (
-                        <p className="mt-1 text-sm text-destructive">{errors.name}</p>
-                      )}
-                    </div>
-
-                    {/* Company */}
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                        Company Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-lg bg-background border ${
-                          errors.company ? "border-destructive" : "border-input"
-                        } focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors`}
-                        placeholder="Your Company"
-                      />
-                      {errors.company && (
-                        <p className="mt-1 text-sm text-destructive">{errors.company}</p>
-                      )}
-                    </div>
+                  {/* Name */}
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className={`w-full px-4 py-3 rounded-lg bg-background border ${
+                        errors.name ? "border-destructive" : "border-input"
+                      } focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors`}
+                      placeholder="John Doe"
+                    />
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-destructive">{errors.name}</p>
+                    )}
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-6">
