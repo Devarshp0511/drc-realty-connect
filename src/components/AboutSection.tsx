@@ -102,8 +102,8 @@ const AboutSection = () => {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "8+", label: "Years of Experience" },
-              { value: "₹500Cr+", label: "Deals Facilitated" },
+              { value: "9+", label: "Years of Experience" },
+              { value: "₹15Cr+", label: "Deals Facilitated" },
               { value: "100%", label: "Client Satisfaction" },
               { value: "Pan-India", label: "Network Coverage" },
             ].map((stat, index) => (

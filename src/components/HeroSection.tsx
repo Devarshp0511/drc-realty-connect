@@ -118,9 +118,9 @@ const HeroSection = () => {
               className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-primary-foreground/10"
             >
               {[
-                { value: "150+", label: "Deals Closed" },
-                { value: "50+", label: "Cities Covered" },
-                { value: "25+", label: "Brand Partners" },
+                { value: "100+", label: "Deals Closed" },
+                { value: "20+", label: "Cities Covered" },
+                { value: "20+", label: "Brand Partners" },
               ].map((stat, index) => (
                 <div key={index} className="text-center lg:text-left">
                   <div className="text-2xl sm:text-3xl font-display font-bold text-accent">
@@ -159,9 +159,9 @@ const HeroSection = () => {
                 {/* Sample Deals */}
                 <div className="space-y-4">
                   {[
-                    { brand: "Zudio", location: "A. Shridhar Complex", city: "Ahmedabad" },
-                    { brand: "Croma", location: "Phoenix Mall", city: "Ahmedabad" },
-                    { brand: "Style Union", location: "VR Mall", city: "Chennai" },
+                    { brand: "Zudio", location: "Rangat Complex Gota", city: "Ahmedabad" },
+                    { brand: "Croma", location: "Science City Road", city: "Ahmedabad" },
+                    { brand: "Style Union", location: "Sama Savli", city: "Vadodara" },
                   ].map((deal, index) => (
                     <motion.div
                       key={index}

@@ -10,38 +10,38 @@ const SuccessStoriesSection = () => {
   const stories = [
     {
       brand: "Zudio",
-      complex: "A. Shridhar Complex",
+      complex: "Rangat Complex Gota",
       city: "Ahmedabad",
       quote:
-        "DRC identified the perfect location for our Ahmedabad expansion. The footfall exceeded our projections by 40% in the first quarter.",
+        "DRC identified the perfect location for our Ahmedabad expansion.",
       author: "Retail Expansion Head",
       stats: [
-        { label: "Footfall Increase", value: "+40%" },
-        { label: "Time to Launch", value: "45 Days" },
+        // { label: "Footfall Increase", value: "+40%" },
+        // { label: "Time to Launch", value: "45 Days" },
       ],
     },
     {
       brand: "Croma",
-      complex: "Phoenix Marketcity",
-      city: "Mumbai",
+      complex: "S.G Highway",
+      city: "Ahmedabad",
       quote:
         "The team at DRC understood our specific requirements and matched us with a premium location that aligned perfectly with our brand positioning.",
       author: "Business Development Manager",
       stats: [
-        { label: "ROI Achievement", value: "120%" },
-        { label: "Store Size", value: "8,000 sq ft" },
+        // { label: "ROI Achievement", value: "120%" },
+        // { label: "Store Size", value: "8,000 sq ft" },
       ],
     },
     {
       brand: "Style Union",
-      complex: "Select Citywalk",
-      city: "Delhi NCR",
+      complex: "Sama Savli Road",
+      city: "Vadodara",
       quote:
         "From initial discussion to store opening, DRC handled everything seamlessly. Their network and expertise are unmatched in the industry.",
       author: "Regional Director",
       stats: [
-        { label: "Deal Closure", value: "30 Days" },
-        { label: "Brand Visibility", value: "+65%" },
+        // { label: "Deal Closure", value: "30 Days" },
+        // { label: "Brand Visibility", value: "+65%" },
       ],
     },
   ];

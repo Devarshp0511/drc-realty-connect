@@ -12,20 +12,36 @@ const PartnersSection = () => {
     { name: "Croma", category: "Electronics" },
     { name: "Style Union", category: "Fashion" },
     { name: "Reliance Trends", category: "Fashion" },
-    { name: "Max Fashion", category: "Fashion" },
+    // { name: "Max Fashion", category: "Fashion" },
     { name: "Pantaloons", category: "Fashion" },
     { name: "Lifestyle", category: "Lifestyle" },
     { name: "Westside", category: "Fashion" },
+    { name: "Netre", category: "Eyewear" },
+    { name: "Lenskart", category: "Eyewear" },
+    { name: "Burnt Toast", category: "Fashion" },
+    { name: "Walkway", category: "Footwear" },
+    { name: "Bata", category: "Footwear" },
+    { name: "Relaxo", category: "Footwear" },
+    { name: "Mr. DIY", category: "General-Purpose" },
+  { name: "Reliance Smart", category: "Grocery" },
+    { name: "Star-Bazaar", category: "Grocery" },
+
+
+
+
+
+
+
   ];
 
-  const developers = [
-    "Phoenix Mills",
-    "Prestige Group",
-    "Brigade Group",
-    "DLF",
-    "Oberoi Realty",
-    "Godrej Properties",
-  ];
+  // const developers = [
+  //   "Phoenix Mills",
+  //   "Prestige Group",
+  //   "Brigade Group",
+  //   "DLF",
+  //   "Oberoi Realty",
+  //   "Godrej Properties",
+  // ];
 
   return (
     <section id="partners" className="section-padding bg-background relative overflow-hidden">
@@ -84,7 +100,7 @@ const PartnersSection = () => {
         </motion.div>
 
         {/* Developer Partners */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -105,7 +121,7 @@ const PartnersSection = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Trust Indicators */}
         <motion.div

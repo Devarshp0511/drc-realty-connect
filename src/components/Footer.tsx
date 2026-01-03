@@ -20,16 +20,16 @@ const Footer = () => {
       { label: "Site Evaluation", href: "#services" },
     ],
     locations: [
-      { label: "Mumbai", href: "#presence" },
-      { label: "Delhi NCR", href: "#presence" },
-      { label: "Bengaluru", href: "#presence" },
+      { label: "Ahmedabad", href: "#presence" },
+      { label: "Vadodara", href: "#presence" },
+      { label: "Pune", href: "#presence" },
       { label: "All Locations", href: "#presence" },
     ],
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:connect@drcrealty.com", label: "Email" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/rashmi-patel-46508650?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", label: "LinkedIn" },
+    { icon: Mail, href: "mailto: rashmi.patel@gmail.com", label: "Email" },
   ];
 
   const scrollToSection = (href: string) => {
