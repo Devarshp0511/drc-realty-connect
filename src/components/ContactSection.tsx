@@ -189,21 +189,6 @@ const ContactSection = () => {
               ))}
             </div>
 
-            {/* Social Links */}
-            <div className="pt-6 border-t border-border">
-              <p className="text-sm text-muted-foreground mb-4">Follow us on social media</p>
-              <div className="flex gap-3">
-                {["LinkedIn", "Twitter", "Instagram"].map((social) => (
-                  <a
-                    key={social}
-                    href="#"
-                    className="w-10 h-10 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300"
-                  >
-                    <span className="text-xs font-bold">{social.charAt(0)}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
           </motion.div>
 
           {/* Contact Form */}
