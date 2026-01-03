@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Send, Phone, Mail, MapPin, CheckCircle, Loader2 } from "lucide-react";
+import { Send, Phone, Mail, MapPin, CheckCircle, Loader2, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -115,6 +115,12 @@ const ContactSection = () => {
       title: "Phone",
       value: "+91 9925055677",
       href: "tel:+919925055677",
+    },
+    {
+      icon: MessageCircle,
+      title: "WhatsApp",
+      value: "+91 9925055677",
+      href: "https://wa.me/919925055677",
     },
     {
       icon: Mail,
