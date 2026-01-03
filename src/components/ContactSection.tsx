@@ -10,10 +10,25 @@ import { z } from "zod";
 
 // Form validation schema
 const contactSchema = z.object({
-  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
-  email: z.string().trim().email("Please enter a valid email address").max(255, "Email must be less than 255 characters"),
-  phone: z.string().trim().regex(/^[+]?[\d\s-]{10,15}$/, "Please enter a valid phone number"),
-  message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters"),
+  name: z
+    .string()
+    .trim()
+    .min(2, "Name must be at least 2 characters")
+    .max(100, "Name must be less than 100 characters"),
+  email: z
+    .string()
+    .trim()
+    .email("Please enter a valid email address")
+    .max(255, "Email must be less than 255 characters"),
+  phone: z
+    .string()
+    .trim()
+    .regex(/^[+]?[\d\s-]{10,15}$/, "Please enter a valid phone number"),
+  message: z
+    .string()
+    .trim()
+    .min(10, "Message must be at least 10 characters")
+    .max(1000, "Message must be less than 1000 characters"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -22,14 +37,14 @@ const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
-  
+
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
-  
+
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -45,7 +60,7 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate form
     const result = contactSchema.safeParse(formData);
     if (!result.success) {
@@ -60,17 +75,15 @@ const ContactSection = () => {
     }
 
     setIsSubmitting(true);
-    
+
     try {
-      const { error } = await supabase
-        .from("contact_submissions")
-        .insert({
-          name: formData.name.trim(),
-          company: "",
-          email: formData.email.trim(),
-          phone: formData.phone.trim(),
-          message: formData.message.trim(),
-        });
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: formData.name.trim(),
+        company: "",
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        message: formData.message.trim(),
+      });
 
       if (error) throw error;
 
@@ -120,7 +133,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="section-padding bg-background relative overflow-hidden">
       {/* Background */}
-      <div 
+      <div
         className="absolute inset-0"
         style={{
           background: `radial-gradient(ellipse at 20% 50%, hsl(var(--accent) / 0.05) 0%, transparent 50%),
@@ -143,8 +156,8 @@ const ContactSection = () => {
             Let's Start a <span className="text-gradient-gold">Conversation</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Whether you're looking to expand your retail presence or lease your commercial space, 
-            we're here to help you make the right connection.
+            Whether you're looking to expand your retail presence or lease your commercial space, we're here to help you
+            make the right connection.
           </p>
         </motion.div>
 
@@ -157,12 +170,9 @@ const ContactSection = () => {
             className="lg:col-span-2 space-y-8"
           >
             <div>
-              <h3 className="font-display font-bold text-2xl text-foreground mb-4">
-                Contact Information
-              </h3>
+              <h3 className="font-display font-bold text-2xl text-foreground mb-4">Contact Information</h3>
               <p className="text-muted-foreground">
-                Reach out to us through any of these channels and our team will 
-                respond within 24 hours.
+                Reach out to us through any of these channels and our team will respond within 24 hours.
               </p>
             </div>
 
@@ -174,7 +184,11 @@ const ContactSection = () => {
                   onClick={(e) => {
                     if (item.title === "Office") {
                       e.preventDefault();
-                      window.open("https://www.google.com/maps/search/?api=1&query=A805,+Money+Plant+Highstreet,+Ahmedabad", "_blank", "noopener,noreferrer");
+                      window.open(
+                        "https://www.google.com/maps/search/?api=1&query=A805,+Money+Plant+Highstreet,+Ahmedabad",
+                        "_blank",
+                        "noopener,noreferrer",
+                      );
                     }
                   }}
                   initial={{ opacity: 0, y: 20 }}
@@ -194,7 +208,6 @@ const ContactSection = () => {
                 </motion.a>
               ))}
             </div>
-
           </motion.div>
 
           {/* Contact Form */}
@@ -214,9 +227,7 @@ const ContactSection = () => {
                   <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
-                  <h3 className="font-display font-bold text-2xl text-foreground mb-2">
-                    Thank You!
-                  </h3>
+                  <h3 className="font-display font-bold text-2xl text-foreground mb-2">Thank You!</h3>
                   <p className="text-muted-foreground">
                     Your message has been sent successfully. We'll be in touch soon.
                   </p>
@@ -239,9 +250,7 @@ const ContactSection = () => {
                       } focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors`}
                       placeholder="John Doe"
                     />
-                    {errors.name && (
-                      <p className="mt-1 text-sm text-destructive">{errors.name}</p>
-                    )}
+                    {errors.name && <p className="mt-1 text-sm text-destructive">{errors.name}</p>}
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-6">
@@ -261,9 +270,7 @@ const ContactSection = () => {
                         } focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors`}
                         placeholder="john@company.com"
                       />
-                      {errors.email && (
-                        <p className="mt-1 text-sm text-destructive">{errors.email}</p>
-                      )}
+                      {errors.email && <p className="mt-1 text-sm text-destructive">{errors.email}</p>}
                     </div>
 
                     {/* Phone */}
@@ -282,9 +289,7 @@ const ContactSection = () => {
                         } focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors`}
                         placeholder="+91 98765 43210"
                       />
-                      {errors.phone && (
-                        <p className="mt-1 text-sm text-destructive">{errors.phone}</p>
-                      )}
+                      {errors.phone && <p className="mt-1 text-sm text-destructive">{errors.phone}</p>}
                     </div>
                   </div>
 
@@ -304,19 +309,11 @@ const ContactSection = () => {
                       } focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-none`}
                       placeholder="Tell us about your requirements..."
                     />
-                    {errors.message && (
-                      <p className="mt-1 text-sm text-destructive">{errors.message}</p>
-                    )}
+                    {errors.message && <p className="mt-1 text-sm text-destructive">{errors.message}</p>}
                   </div>
 
                   {/* Submit Button */}
-                  <Button
-                    type="submit"
-                    variant="gold"
-                    size="lg"
-                    className="w-full sm:w-auto"
-                    disabled={isSubmitting}
-                  >
+                  <Button type="submit" variant="gold" size="lg" className="w-full sm:w-auto" disabled={isSubmitting}>
                     {isSubmitting ? (
                       <>
                         <Loader2 className="w-5 h-5 animate-spin" />
