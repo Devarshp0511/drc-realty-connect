@@ -112,8 +112,8 @@ const ContactSection = () => {
     {
       icon: MapPin,
       title: "Office",
-      value: "Ahmedabad, Gujarat, India",
-      href: "https://www.google.com/maps/search/?api=1&query=Ahmedabad,+Gujarat,+India",
+      value: "A805, Money Plant Highstreet, Ahmedabad",
+      href: "https://www.google.com/maps/search/?api=1&query=A805,+Money+Plant+Highstreet,+Ahmedabad",
     },
   ];
 
@@ -174,7 +174,7 @@ const ContactSection = () => {
                   onClick={(e) => {
                     if (item.title === "Office") {
                       e.preventDefault();
-                      window.open("https://www.google.com/maps/search/?api=1&query=Ahmedabad,+Gujarat,+India", "_blank", "noopener,noreferrer");
+                      window.open("https://www.google.com/maps/search/?api=1&query=A805,+Money+Plant+Highstreet,+Ahmedabad", "_blank", "noopener,noreferrer");
                     }
                   }}
                   initial={{ opacity: 0, y: 20 }}
