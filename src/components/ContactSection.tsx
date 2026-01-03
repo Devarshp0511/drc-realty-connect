@@ -90,8 +90,8 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "connect@drcrealty.com",
-      href: "mailto:connect@drcrealty.com",
+      value: "rashmiccc@gmail.com",
+      href: "mailto:rashmiccc@gmail.com",
     },
     {
       icon: MapPin,
