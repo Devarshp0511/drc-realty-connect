@@ -171,8 +171,12 @@ const ContactSection = () => {
                 <motion.a
                   key={index}
                   href={item.href}
-                  target={item.title === "Office" ? "_blank" : undefined}
-                  rel={item.title === "Office" ? "noopener noreferrer" : undefined}
+                  onClick={(e) => {
+                    if (item.title === "Office") {
+                      e.preventDefault();
+                      window.open("https://www.google.com/maps/search/?api=1&query=Ahmedabad,+Gujarat,+India", "_blank", "noopener,noreferrer");
+                    }
+                  }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: index * 0.1 + 0.3 }}
