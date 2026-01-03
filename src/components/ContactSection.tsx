@@ -113,8 +113,8 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 8735910881",
-      href: "tel:+918735910881",
+      value: "+91 9925055677",
+      href: "tel:+919925055677",
     },
     {
       icon: Mail,
