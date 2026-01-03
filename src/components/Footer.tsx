@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUp, Linkedin, Twitter, Instagram, Mail } from "lucide-react";
+import { ArrowUp, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -29,8 +29,6 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Mail, href: "mailto:connect@drcrealty.com", label: "Email" },
   ];
 
