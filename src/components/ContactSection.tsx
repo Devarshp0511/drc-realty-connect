@@ -96,7 +96,7 @@ const ContactSection = () => {
     {
       icon: MapPin,
       title: "Office",
-      value: "Mumbai, Maharashtra, India",
+      value: "Ahmedabad, Gujarat, India",
       href: "#",
     },
   ];
