@@ -29,7 +29,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/rashmi-patel-46508650?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", label: "LinkedIn" },
-    { icon: Mail, href: "mailto: rashmi.patel@gmail.com", label: "Email" },
+    { icon: Mail, href: "mailto:drc.gujarat@gmail.com", label: "Email" },
   ];
 
   const scrollToSection = (href: string) => {
