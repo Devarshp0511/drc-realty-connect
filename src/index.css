@@ -10,6 +10,12 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
 @layer base {
   :root {
     /* Premium Navy & Gold Theme */
@@ -19,7 +25,7 @@
     --card: 0 0% 100%;
     --card-foreground: 0 0% 0%;
 
-    --popover: 0 0% 100%;
+    --popover: 263 99% 58%;
     --popover-foreground: 0 0% 0%;
 
     /* Deep Navy Primary */
