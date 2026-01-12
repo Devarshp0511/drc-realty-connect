@@ -77,61 +77,74 @@ const HowItWorksSection = () => {
         </motion.div>
 
         {/* Steps */}
-        <div className="relative">
-          {/* Connecting Line - Desktop */}
-          <div className="hidden lg:block absolute top-24 left-[calc(12.5%+28px)] right-[calc(12.5%+28px)] h-0.5 bg-gradient-to-r from-accent/50 via-accent to-accent/50" />
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="relative"
-              >
-                {/* Step Card */}
-                <div className="text-center">
-                  {/* Icon Circle */}
-                  <div className="relative inline-block mb-6">
-                    <motion.div
-                      animate={isInView ? { scale: [0.8, 1] } : {}}
-                      transition={{ delay: index * 0.15 + 0.3, type: "spring" }}
-                      className="w-14 h-14 rounded-full bg-accent flex items-center justify-center shadow-gold relative z-10"
-                    >
-                      <step.icon className="w-7 h-7 text-accent-foreground" />
-                    </motion.div>
-                    {/* Number Badge */}
-                    <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary-foreground text-primary text-xs font-bold flex items-center justify-center">
-                      {step.number}
-                    </span>
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="font-display font-bold text-xl text-primary-foreground mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-primary-foreground/60 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-
-                {/* Arrow for mobile/tablet */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className="relative"
+            >
+              {/* Step Card */}
+              <div className="text-center relative">
+                {/* Connecting Arrow - Desktop (between cards, not overlapping icons) */}
                 {index < steps.length - 1 && (
-                  <div className="lg:hidden flex justify-center my-6">
+                  <div className="hidden lg:flex absolute top-7 left-[calc(50%+40px)] right-0 items-center z-0 translate-x-2">
+                    <div className="flex-1 h-[2px] bg-gradient-to-r from-accent to-accent/40" />
                     <svg
-                      className="w-6 h-6 text-accent transform rotate-90"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
+                      className="w-4 h-4 text-accent/60 -ml-1 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      <path
+                        fillRule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                 )}
-              </motion.div>
-            ))}
-          </div>
+
+                {/* Icon Circle */}
+                <div className="relative inline-block mb-6">
+                  <motion.div
+                    animate={isInView ? { scale: [0.8, 1] } : {}}
+                    transition={{ delay: index * 0.15 + 0.3, type: "spring" }}
+                    className="w-14 h-14 rounded-full bg-accent flex items-center justify-center shadow-gold relative z-10"
+                  >
+                    <step.icon className="w-7 h-7 text-accent-foreground" />
+                  </motion.div>
+                  {/* Number Badge */}
+                  <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary-foreground text-primary text-xs font-bold flex items-center justify-center z-20">
+                    {step.number}
+                  </span>
+                </div>
+
+                {/* Content */}
+                <h3 className="font-display font-bold text-xl text-primary-foreground mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-primary-foreground/60 leading-relaxed text-sm">
+                  {step.description}
+                </p>
+              </div>
+
+              {/* Arrow for mobile/tablet */}
+              {index < steps.length - 1 && (
+                <div className="lg:hidden flex justify-center my-6">
+                  <svg
+                    className="w-6 h-6 text-accent transform rotate-90"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              )}
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
