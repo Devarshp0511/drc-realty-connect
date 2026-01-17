@@ -25,7 +25,12 @@ const Footer = () => {
       { label: "Ahmedabad", href: "#presence" },
       { label: "Vadodara", href: "#presence" },
       { label: "Pune", href: "#presence" },
-      { label: "All Locations", href: "#presence" },
+      { label: "Surat", href: "#presence" },
+      { label: "Mumbai", href: "#presence" },
+      { label: "Delhi", href: "#presence" },
+      { label: "Indore", href: "#presence" },
+      { label: "Bangalore", href: "#presence" },
+      { label: "Hyderabad", href: "#presence" },
     ],
   };
 
