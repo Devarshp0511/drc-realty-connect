@@ -53,7 +53,7 @@ const Footer = () => {
               <img 
                 src={drcLogo} 
                 alt="DRC Corporate Assets" 
-                className="h-14 w-auto object-contain"
+                className="h-14 w-auto object-contain rounded-lg drop-shadow-[0_0_15px_rgba(212,175,55,0.5)] hover:drop-shadow-[0_0_25px_rgba(212,175,55,0.7)] transition-all duration-300"
               />
             </a>
             <p className="text-primary-foreground/70 mb-6 max-w-sm">
