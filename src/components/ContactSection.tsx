@@ -18,8 +18,9 @@ const contactSchema = z.object({
   email: z
     .string()
     .trim()
-    .email("Please enter a valid email address")
-    .max(255, "Email must be less than 255 characters"),
+    .max(255, "Email must be less than 255 characters")
+    .optional()
+    .refine((val) => !val || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), "Please enter a valid email address"),
   phone: z
     .string()
     .trim()
@@ -27,8 +28,8 @@ const contactSchema = z.object({
   message: z
     .string()
     .trim()
-    .min(10, "Message must be at least 10 characters")
-    .max(1000, "Message must be less than 1000 characters"),
+    .max(1000, "Message must be less than 1000 characters")
+    .optional(),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -80,9 +81,9 @@ const ContactSection = () => {
       const { error } = await supabase.from("contact_submissions").insert({
         name: formData.name.trim(),
         company: "",
-        email: formData.email.trim(),
+        email: formData.email?.trim() || "",
         phone: formData.phone.trim(),
-        message: formData.message.trim(),
+        message: formData.message?.trim() || "",
       });
 
       if (error) throw error;
@@ -263,7 +264,7 @@ const ContactSection = () => {
                     {/* Email */}
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                        Email Address *
+                        Email Address
                       </label>
                       <input
                         type="email"
@@ -274,7 +275,7 @@ const ContactSection = () => {
                         className={`w-full px-4 py-3 rounded-lg bg-background border ${
                           errors.email ? "border-destructive" : "border-input"
                         } focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors`}
-                        placeholder="john@company.com"
+                        placeholder="john@company.com (optional)"
                       />
                       {errors.email && <p className="mt-1 text-sm text-destructive">{errors.email}</p>}
                     </div>
@@ -302,7 +303,7 @@ const ContactSection = () => {
                   {/* Message */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                      Your Message *
+                      Your Message
                     </label>
                     <textarea
                       id="message"
@@ -313,7 +314,7 @@ const ContactSection = () => {
                       className={`w-full px-4 py-3 rounded-lg bg-background border ${
                         errors.message ? "border-destructive" : "border-input"
                       } focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-none`}
-                      placeholder="Tell us about your requirements..."
+                      placeholder="Tell us about your requirements... (optional)"
                     />
                     {errors.message && <p className="mt-1 text-sm text-destructive">{errors.message}</p>}
                   </div>
