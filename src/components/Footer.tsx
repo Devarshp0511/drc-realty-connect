@@ -12,7 +12,6 @@ const Footer = () => {
     company: [
       { label: "About Us", href: "#about" },
       { label: "Our Services", href: "#services" },
-      { label: "Success Stories", href: "#stories" },
       { label: "Contact", href: "#contact" },
     ],
     services: [
