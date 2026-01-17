@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUp, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import drcLogo from "@/assets/drclogo-rounded.png";
 
 const Footer = () => {
@@ -133,12 +134,12 @@ const Footer = () => {
           </p>
           
           <div className="flex items-center gap-6 text-sm text-primary-foreground/60">
-            <a href="#" className="hover:text-accent transition-colors">
+            <Link to="/privacy-policy" className="hover:text-accent transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-accent transition-colors">
+            </Link>
+            <Link to="/terms-of-service" className="hover:text-accent transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
 
           {/* Back to Top */}
