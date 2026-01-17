@@ -109,11 +109,11 @@ const PartnersSection = () => {
                       </span>
                     </div>
                   )}
-                  <div className="relative z-10 p-4 w-full">
-                    <h4 className={`font-bold text-lg transition-colors ${partner.logo ? 'text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] [text-shadow:_0_2px_8px_rgba(0,0,0,0.9),_0_0_20px_rgba(255,255,255,0.5)]' : 'text-foreground group-hover:text-accent'}`}>
+                  <div className="relative z-10 p-4 w-full bg-gradient-to-t from-black/80 to-black/40 backdrop-blur-sm">
+                    <h4 className={`font-bold text-lg transition-colors ${partner.logo ? 'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.6)] [text-shadow:_0_2px_8px_rgba(0,0,0,0.9)]' : 'text-foreground group-hover:text-accent'}`}>
                       {partner.name}
                     </h4>
-                    <p className={`text-sm mt-1 font-medium ${partner.logo ? 'text-white/90 drop-shadow-[0_0_8px_rgba(255,255,255,0.6)] [text-shadow:_0_1px_4px_rgba(0,0,0,0.9)]' : 'text-muted-foreground'}`}>
+                    <p className={`text-sm mt-1 font-medium ${partner.logo ? 'text-amber-100 [text-shadow:_0_1px_4px_rgba(0,0,0,0.9)]' : 'text-muted-foreground'}`}>
                       {partner.category}
                     </p>
                   </div>
