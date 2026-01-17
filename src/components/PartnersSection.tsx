@@ -20,6 +20,7 @@ import starbazaarLogo from "@/assets/starbazaar-logo.webp";
 import lakmeLogo from "@/assets/lakme-logo.webp";
 import mcdonaldsLogo from "@/assets/mcdonalds-logo.webp";
 import starbucksLogo from "@/assets/starbucks-logo.webp";
+import connplexLogo from "@/assets/connplex-logo.webp";
 
 const PartnersSection = () => {
   const ref = useRef(null);
@@ -46,6 +47,7 @@ const PartnersSection = () => {
     { name: "Lakme", category: "Cosmetics", logo: lakmeLogo },
     { name: "McDonald's", category: "Food", logo: mcdonaldsLogo },
     { name: "Starbucks", category: "Food", logo: starbucksLogo },
+    { name: "Connplex Cinemas", category: "Cinema", logo: connplexLogo },
   ];
 
   // const developers = [
