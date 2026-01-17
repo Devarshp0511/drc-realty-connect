@@ -109,7 +109,7 @@ const PartnersSection = () => {
                       </span>
                     </div>
                   )}
-                  <div className="relative z-10 p-4 w-full bg-gradient-to-t from-black/80 to-black/40 backdrop-blur-sm">
+                  <div className="relative z-10 p-3 w-full bg-gradient-to-t from-black/60 to-transparent">
                     <h4 className={`font-bold text-lg transition-colors ${partner.logo ? 'text-amber-300 drop-shadow-[0_0_10px_rgba(251,191,36,0.6)] [text-shadow:_0_2px_8px_rgba(0,0,0,0.9)]' : 'text-foreground group-hover:text-accent'}`}>
                       {partner.name}
                     </h4>
