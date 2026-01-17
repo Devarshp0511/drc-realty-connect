@@ -80,12 +80,19 @@ const PartnersSection = () => {
                 className="group"
               >
                 <div className="glass-card rounded-xl p-6 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-premium-lg hover:-translate-y-1 hover:border-accent/30">
-                  <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors overflow-hidden">
+                  <div className={`flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors overflow-hidden ${
+                    partner.name === "Lenskart" || partner.name === "Croma" 
+                      ? "w-20 h-12 rounded-lg bg-white p-1" 
+                      : "w-16 h-16 rounded-full bg-accent/10"
+                  }`}>
                     {partner.logo ? (
                       <img 
                         src={partner.logo} 
                         alt={`${partner.name} logo`} 
-                        className="w-full h-full object-cover rounded-full"
+                        className={partner.name === "Lenskart" || partner.name === "Croma" 
+                          ? "w-full h-full object-contain" 
+                          : "w-full h-full object-cover rounded-full"
+                        }
                       />
                     ) : (
                       <span className="text-xl font-display font-bold text-accent">
