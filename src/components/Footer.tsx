@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUp, Linkedin, Mail } from "lucide-react";
-import drcLogo from "@/assets/drclogo.jpeg";
+import drcLogo from "@/assets/drclogo-rounded.png";
 
 const Footer = () => {
   const scrollToTop = () => {
