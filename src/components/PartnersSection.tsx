@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import bataLogo from "@/assets/bata-logo.jpeg";
 
 const PartnersSection = () => {
   const ref = useRef(null);
@@ -8,30 +9,22 @@ const PartnersSection = () => {
 
   // Partner logos (using text placeholders for brands)
   const partners = [
-    { name: "Zudio", category: "Fashion" },
-    { name: "Croma", category: "Electronics" },
-    { name: "Style Union", category: "Fashion" },
-    { name: "Reliance Trends", category: "Fashion" },
-    // { name: "Max Fashion", category: "Fashion" },
-    { name: "Pantaloons", category: "Fashion" },
-    { name: "Lifestyle", category: "Lifestyle" },
-    { name: "Westside", category: "Fashion" },
-    { name: "Netre", category: "Eyewear" },
-    { name: "Lenskart", category: "Eyewear" },
-    { name: "Burnt Toast", category: "Fashion" },
-    { name: "Walkway", category: "Footwear" },
-    { name: "Bata", category: "Footwear" },
-    { name: "Relaxo", category: "Footwear" },
-    { name: "Mr. DIY", category: "General-Purpose" },
-  { name: "Reliance Smart", category: "Grocery" },
-    { name: "Star-Bazaar", category: "Grocery" },
-
-
-
-
-
-
-
+    { name: "Zudio", category: "Fashion", logo: null },
+    { name: "Croma", category: "Electronics", logo: null },
+    { name: "Style Union", category: "Fashion", logo: null },
+    { name: "Reliance Trends", category: "Fashion", logo: null },
+    { name: "Pantaloons", category: "Fashion", logo: null },
+    { name: "Lifestyle", category: "Lifestyle", logo: null },
+    { name: "Westside", category: "Fashion", logo: null },
+    { name: "Netre", category: "Eyewear", logo: null },
+    { name: "Lenskart", category: "Eyewear", logo: null },
+    { name: "Burnt Toast", category: "Fashion", logo: null },
+    { name: "Walkway", category: "Footwear", logo: null },
+    { name: "Bata", category: "Footwear", logo: bataLogo },
+    { name: "Relaxo", category: "Footwear", logo: null },
+    { name: "Mr. DIY", category: "General-Purpose", logo: null },
+    { name: "Reliance Smart", category: "Grocery", logo: null },
+    { name: "Star-Bazaar", category: "Grocery", logo: null },
   ];
 
   // const developers = [
@@ -84,10 +77,18 @@ const PartnersSection = () => {
                 className="group"
               >
                 <div className="glass-card rounded-xl p-6 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-premium-lg hover:-translate-y-1 hover:border-accent/30">
-                  <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                    <span className="text-xl font-display font-bold text-accent">
-                      {partner.name.charAt(0)}
-                    </span>
+                  <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors overflow-hidden">
+                    {partner.logo ? (
+                      <img 
+                        src={partner.logo} 
+                        alt={`${partner.name} logo`} 
+                        className="w-full h-full object-cover rounded-full"
+                      />
+                    ) : (
+                      <span className="text-xl font-display font-bold text-accent">
+                        {partner.name.charAt(0)}
+                      </span>
+                    )}
                   </div>
                   <h4 className="font-semibold text-foreground group-hover:text-accent transition-colors">
                     {partner.name}
