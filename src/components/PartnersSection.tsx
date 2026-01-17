@@ -16,6 +16,7 @@ import trendsLogo from "@/assets/trends-logo.png";
 import walkwayLogo from "@/assets/walkway-logo.webp";
 import westsideLogo from "@/assets/westside-logo.jpg";
 import zudioLogo from "@/assets/zudio-logo.jpeg";
+import starbazaarLogo from "@/assets/starbazaar-logo.avif";
 
 const PartnersSection = () => {
   const ref = useRef(null);
@@ -38,7 +39,7 @@ const PartnersSection = () => {
     { name: "Relaxo", category: "Footwear", logo: relaxoLogo },
     { name: "Mr. DIY", category: "General-Purpose", logo: mrdiyLogo },
     { name: "Reliance Smart", category: "Grocery", logo: reliancesmartLogo },
-    { name: "Star-Bazaar", category: "Grocery", logo: null },
+    { name: "Star-Bazaar", category: "Grocery", logo: starbazaarLogo },
   ];
 
   // const developers = [
