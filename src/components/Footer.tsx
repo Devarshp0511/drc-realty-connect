@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUp, Linkedin, Mail } from "lucide-react";
+import drcLogo from "@/assets/drclogo.jpeg";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -48,13 +49,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <a href="#" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center shadow-gold">
-                <span className="font-display font-bold text-accent-foreground text-lg">D</span>
-              </div>
-              <span className="font-display font-bold text-xl text-primary-foreground">
-                DRC<span className="text-accent"> Realty</span>
-              </span>
+            <a href="#" className="flex items-center gap-3 mb-6">
+              <img 
+                src={drcLogo} 
+                alt="DRC Corporate Assets" 
+                className="h-14 w-auto object-contain"
+              />
             </a>
             <p className="text-primary-foreground/70 mb-6 max-w-sm">
               India's premier retail real estate connector, bridging top brands with 
