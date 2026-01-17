@@ -8,6 +8,12 @@ import lenskartLogo from "@/assets/lenskart-logo.webp";
 import lifestyleLogo from "@/assets/lifestyle-logo.png";
 import reliancesmartLogo from "@/assets/reliancesmart-logo.webp";
 import pantaloonsLogo from "@/assets/pantaloons-logo.jpeg";
+import netreLogo from "@/assets/netre-logo.webp";
+import mrdiyLogo from "@/assets/mrdiy-logo.png";
+import relaxoLogo from "@/assets/relaxo-logo.webp";
+import styleunionLogo from "@/assets/styleunion-logo.svg";
+import trendsLogo from "@/assets/trends-logo.png";
+import walkwayLogo from "@/assets/walkway-logo.webp";
 
 const PartnersSection = () => {
   const ref = useRef(null);
@@ -17,18 +23,18 @@ const PartnersSection = () => {
   const partners = [
     { name: "Zudio", category: "Fashion", logo: null },
     { name: "Croma", category: "Electronics", logo: cromaLogo },
-    { name: "Style Union", category: "Fashion", logo: null },
-    { name: "Reliance Trends", category: "Fashion", logo: null },
+    { name: "Style Union", category: "Fashion", logo: styleunionLogo },
+    { name: "Reliance Trends", category: "Fashion", logo: trendsLogo },
     { name: "Pantaloons", category: "Fashion", logo: pantaloonsLogo },
     { name: "Lifestyle", category: "Lifestyle", logo: lifestyleLogo },
     { name: "Westside", category: "Fashion", logo: null },
-    { name: "Netre", category: "Eyewear", logo: null },
+    { name: "Netre", category: "Eyewear", logo: netreLogo },
     { name: "Lenskart", category: "Eyewear", logo: lenskartLogo },
     { name: "Burnt Toast", category: "Fashion", logo: burnttoastLogo },
-    { name: "Walkway", category: "Footwear", logo: null },
+    { name: "Walkway", category: "Footwear", logo: walkwayLogo },
     { name: "Bata", category: "Footwear", logo: bataLogo },
-    { name: "Relaxo", category: "Footwear", logo: null },
-    { name: "Mr. DIY", category: "General-Purpose", logo: null },
+    { name: "Relaxo", category: "Footwear", logo: relaxoLogo },
+    { name: "Mr. DIY", category: "General-Purpose", logo: mrdiyLogo },
     { name: "Reliance Smart", category: "Grocery", logo: reliancesmartLogo },
     { name: "Star-Bazaar", category: "Grocery", logo: null },
   ];
