@@ -5,6 +5,9 @@ import bataLogo from "@/assets/bata-logo.jpeg";
 import burnttoastLogo from "@/assets/burnttoast-logo.png";
 import cromaLogo from "@/assets/croma-logo.png";
 import lenskartLogo from "@/assets/lenskart-logo.webp";
+import lifestyleLogo from "@/assets/lifestyle-logo.png";
+import reliancesmartLogo from "@/assets/reliancesmart-logo.webp";
+import pantaloonsLogo from "@/assets/pantaloons-logo.jpeg";
 
 const PartnersSection = () => {
   const ref = useRef(null);
@@ -16,8 +19,8 @@ const PartnersSection = () => {
     { name: "Croma", category: "Electronics", logo: cromaLogo },
     { name: "Style Union", category: "Fashion", logo: null },
     { name: "Reliance Trends", category: "Fashion", logo: null },
-    { name: "Pantaloons", category: "Fashion", logo: null },
-    { name: "Lifestyle", category: "Lifestyle", logo: null },
+    { name: "Pantaloons", category: "Fashion", logo: pantaloonsLogo },
+    { name: "Lifestyle", category: "Lifestyle", logo: lifestyleLogo },
     { name: "Westside", category: "Fashion", logo: null },
     { name: "Netre", category: "Eyewear", logo: null },
     { name: "Lenskart", category: "Eyewear", logo: lenskartLogo },
@@ -26,7 +29,7 @@ const PartnersSection = () => {
     { name: "Bata", category: "Footwear", logo: bataLogo },
     { name: "Relaxo", category: "Footwear", logo: null },
     { name: "Mr. DIY", category: "General-Purpose", logo: null },
-    { name: "Reliance Smart", category: "Grocery", logo: null },
+    { name: "Reliance Smart", category: "Grocery", logo: reliancesmartLogo },
     { name: "Star-Bazaar", category: "Grocery", logo: null },
   ];
 
