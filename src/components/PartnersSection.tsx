@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import bataLogo from "@/assets/bata-logo.jpeg";
+import burnttoastLogo from "@/assets/burnttoast-logo.png";
+import cromaLogo from "@/assets/croma-logo.png";
+import lenskartLogo from "@/assets/lenskart-logo.webp";
 
 const PartnersSection = () => {
   const ref = useRef(null);
@@ -10,15 +13,15 @@ const PartnersSection = () => {
   // Partner logos (using text placeholders for brands)
   const partners = [
     { name: "Zudio", category: "Fashion", logo: null },
-    { name: "Croma", category: "Electronics", logo: null },
+    { name: "Croma", category: "Electronics", logo: cromaLogo },
     { name: "Style Union", category: "Fashion", logo: null },
     { name: "Reliance Trends", category: "Fashion", logo: null },
     { name: "Pantaloons", category: "Fashion", logo: null },
     { name: "Lifestyle", category: "Lifestyle", logo: null },
     { name: "Westside", category: "Fashion", logo: null },
     { name: "Netre", category: "Eyewear", logo: null },
-    { name: "Lenskart", category: "Eyewear", logo: null },
-    { name: "Burnt Toast", category: "Fashion", logo: null },
+    { name: "Lenskart", category: "Eyewear", logo: lenskartLogo },
+    { name: "Burnt Toast", category: "Fashion", logo: burnttoastLogo },
     { name: "Walkway", category: "Footwear", logo: null },
     { name: "Bata", category: "Footwear", logo: bataLogo },
     { name: "Relaxo", category: "Footwear", logo: null },
