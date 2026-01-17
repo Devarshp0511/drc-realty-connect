@@ -79,31 +79,32 @@ const PartnersSection = () => {
                 transition={{ duration: 0.4, delay: index * 0.05 + 0.3 }}
                 className="group"
               >
-                <div className="glass-card rounded-xl p-6 h-full flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-premium-lg hover:-translate-y-1 hover:border-accent/30">
-                  <div className={`flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors overflow-hidden ${
-                    partner.name === "Lenskart" || partner.name === "Croma" 
-                      ? "w-20 h-12 rounded-lg bg-white p-1" 
-                      : "w-16 h-16 rounded-full bg-accent/10"
-                  }`}>
-                    {partner.logo ? (
-                      <img 
-                        src={partner.logo} 
-                        alt={`${partner.name} logo`} 
-                        className={partner.name === "Lenskart" || partner.name === "Croma" 
-                          ? "w-full h-full object-contain" 
-                          : "w-full h-full object-cover rounded-full"
-                        }
-                      />
-                    ) : (
+                <div 
+                  className="glass-card rounded-xl h-full flex flex-col items-center justify-end text-center transition-all duration-300 hover:shadow-premium-lg hover:-translate-y-1 hover:border-accent/30 relative overflow-hidden min-h-[140px]"
+                  style={partner.logo ? {
+                    backgroundImage: `url(${partner.logo})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  } : {}}
+                >
+                  {partner.logo && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  )}
+                  {!partner.logo && (
+                    <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                       <span className="text-xl font-display font-bold text-accent">
                         {partner.name.charAt(0)}
                       </span>
-                    )}
+                    </div>
+                  )}
+                  <div className="relative z-10 p-4 w-full">
+                    <h4 className={`font-semibold transition-colors ${partner.logo ? 'text-white' : 'text-foreground group-hover:text-accent'}`}>
+                      {partner.name}
+                    </h4>
+                    <p className={`text-xs mt-1 ${partner.logo ? 'text-white/80' : 'text-muted-foreground'}`}>
+                      {partner.category}
+                    </p>
                   </div>
-                  <h4 className="font-semibold text-foreground group-hover:text-accent transition-colors">
-                    {partner.name}
-                  </h4>
-                  <p className="text-xs text-muted-foreground mt-1">{partner.category}</p>
                 </div>
               </motion.div>
             ))}
