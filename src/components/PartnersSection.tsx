@@ -14,6 +14,8 @@ import relaxoLogo from "@/assets/relaxo-logo.webp";
 import styleunionLogo from "@/assets/styleunion-logo.svg";
 import trendsLogo from "@/assets/trends-logo.png";
 import walkwayLogo from "@/assets/walkway-logo.webp";
+import westsideLogo from "@/assets/westside-logo.jpg";
+import zudioLogo from "@/assets/zudio-logo.jpeg";
 
 const PartnersSection = () => {
   const ref = useRef(null);
@@ -21,13 +23,13 @@ const PartnersSection = () => {
 
   // Partner logos (using text placeholders for brands)
   const partners = [
-    { name: "Zudio", category: "Fashion", logo: null },
+    { name: "Zudio", category: "Fashion", logo: zudioLogo },
     { name: "Croma", category: "Electronics", logo: cromaLogo },
     { name: "Style Union", category: "Fashion", logo: styleunionLogo },
     { name: "Reliance Trends", category: "Fashion", logo: trendsLogo },
     { name: "Pantaloons", category: "Fashion", logo: pantaloonsLogo },
     { name: "Lifestyle", category: "Lifestyle", logo: lifestyleLogo },
-    { name: "Westside", category: "Fashion", logo: null },
+    { name: "Westside", category: "Fashion", logo: westsideLogo },
     { name: "Netre", category: "Eyewear", logo: netreLogo },
     { name: "Lenskart", category: "Eyewear", logo: lenskartLogo },
     { name: "Burnt Toast", category: "Fashion", logo: burnttoastLogo },
