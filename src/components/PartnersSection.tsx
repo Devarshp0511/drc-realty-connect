@@ -17,6 +17,9 @@ import walkwayLogo from "@/assets/walkway-logo.webp";
 import westsideLogo from "@/assets/westside-logo.jpg";
 import zudioLogo from "@/assets/zudio-logo.jpeg";
 import starbazaarLogo from "@/assets/starbazaar-logo.webp";
+import lakmeLogo from "@/assets/lakme-logo.webp";
+import mcdonaldsLogo from "@/assets/mcdonalds-logo.webp";
+import starbucksLogo from "@/assets/starbucks-logo.webp";
 
 const PartnersSection = () => {
   const ref = useRef(null);
@@ -40,6 +43,9 @@ const PartnersSection = () => {
     { name: "Mr. DIY", category: "General-Purpose", logo: mrdiyLogo },
     { name: "Reliance Smart", category: "Grocery", logo: reliancesmartLogo },
     { name: "Star-Bazaar", category: "Grocery", logo: starbazaarLogo },
+    { name: "Lakme", category: "Cosmetics", logo: lakmeLogo },
+    { name: "McDonald's", category: "Food", logo: mcdonaldsLogo },
+    { name: "Starbucks", category: "Food", logo: starbucksLogo },
   ];
 
   // const developers = [
