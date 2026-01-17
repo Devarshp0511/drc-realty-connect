@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import drcLogo from "@/assets/drclogo.jpeg";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -53,16 +54,13 @@ const Navbar = () => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="flex items-center gap-2"
+              className="flex items-center gap-3"
             >
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center shadow-gold">
-                <span className="font-display font-bold text-accent-foreground text-lg">D</span>
-              </div>
-              <span className={`font-display font-bold text-xl transition-colors ${
-                isScrolled ? "text-foreground" : "text-primary-foreground"
-              }`}>
-                DRC<span className="text-accent"> Realty</span>
-              </span>
+              <img 
+                src={drcLogo} 
+                alt="DRC Corporate Assets" 
+                className="h-12 w-auto object-contain"
+              />
             </a>
 
             {/* Desktop Navigation */}
