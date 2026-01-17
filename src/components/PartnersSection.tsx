@@ -16,7 +16,7 @@ import trendsLogo from "@/assets/trends-logo.png";
 import walkwayLogo from "@/assets/walkway-logo.webp";
 import westsideLogo from "@/assets/westside-logo.jpg";
 import zudioLogo from "@/assets/zudio-logo.jpeg";
-import starbazaarLogo from "@/assets/starbazaar-logo.avif";
+import starbazaarLogo from "@/assets/starbazaar-logo.webp";
 
 const PartnersSection = () => {
   const ref = useRef(null);
