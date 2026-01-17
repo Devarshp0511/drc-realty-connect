@@ -73,7 +73,7 @@ const Navbar = () => {
                   onClick={() => scrollToSection(link.href)}
                   className={`text-sm font-medium transition-colors ${
                     link.href === "#contact"
-                      ? "bg-accent text-accent-foreground px-4 py-2 rounded-lg shadow-gold hover:bg-accent/90 font-semibold"
+                      ? "bg-emerald-500 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-emerald-600 font-semibold"
                       : `hover:text-accent ${isScrolled ? "text-foreground" : "text-primary-foreground/90"}`
                   }`}
                 >
