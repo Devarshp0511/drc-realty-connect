@@ -102,7 +102,7 @@ const PrivacyPolicy = () => {
                 </p>
                 <p>
                   <strong>Email:</strong> <a href="mailto:drc.gujarat@gmail.com" className="text-accent hover:underline">drc.gujarat@gmail.com</a><br />
-                  <strong>Phone:</strong> +91 98250 98250
+                  <strong>Phone:</strong> +91 9925055677
                 </p>
               </section>
             </div>
