@@ -122,27 +122,6 @@ const PartnersSection = () => {
             ))}
           </div>
         </motion.div> */}
-
-        {/* Trust Indicators */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 text-center"
-        >
-          <div className="inline-flex items-center gap-8 flex-wrap justify-center">
-            {[
-              { icon: "🏆", text: "Industry Leaders" },
-              { icon: "🤝", text: "Trusted Partnerships" },
-              { icon: "📈", text: "Proven Results" },
-            ].map((item, index) => (
-              <div key={index} className="flex items-center gap-2 text-muted-foreground">
-                <span className="text-2xl">{item.icon}</span>
-                <span className="font-medium">{item.text}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
