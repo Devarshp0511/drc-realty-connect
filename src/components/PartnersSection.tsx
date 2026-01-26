@@ -7,7 +7,7 @@ import cromaLogo from "@/assets/croma-logo.png";
 import lenskartLogo from "@/assets/lenskart-logo.webp";
 import lifestyleLogo from "@/assets/lifestyle-logo.png";
 import reliancesmartLogo from "@/assets/reliancesmart-logo.webp";
-import pantaloonsLogo from "@/assets/pantaloons-logo.jpeg";
+import pantaloonsLogo from "@/assets/pantaloons-logo.webp";
 import netreLogo from "@/assets/netre-logo.webp";
 import mrdiyLogo from "@/assets/mrdiy-logo.png";
 import relaxoLogo from "@/assets/relaxo-logo.webp";
