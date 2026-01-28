@@ -185,14 +185,6 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Floating Badge */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-6 px-4 py-2 rounded-full bg-accent text-accent-foreground font-semibold text-sm shadow-gold"
-              >
-                Trusted Partner
-              </motion.div>
             </div>
           </motion.div>
         </div>
