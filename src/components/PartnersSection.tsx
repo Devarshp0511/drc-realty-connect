@@ -103,10 +103,10 @@ const PartnersSection = () => {
                   className="glass-card rounded-xl h-full flex flex-col items-center justify-end text-center transition-all duration-300 hover:shadow-premium-lg hover:-translate-y-1 hover:border-accent/30 relative overflow-hidden min-h-[140px]"
                   style={partner.logo ? {
                     backgroundImage: `url(${partner.logo})`,
-                    backgroundSize: partner.name === "Style Union" ? '70% auto' : 'cover',
+                    backgroundSize: (partner.name === "Style Union" || partner.name === "Lifestyle") ? '70% auto' : 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
-                    backgroundColor: partner.name === "Style Union" ? '#ffffff' : undefined,
+                    backgroundColor: (partner.name === "Style Union" || partner.name === "Lifestyle") ? '#ffffff' : undefined,
                   } : {}}
                 >
                   {partner.logo && (
