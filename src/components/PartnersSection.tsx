@@ -104,7 +104,7 @@ const PartnersSection = () => {
                   style={partner.logo ? {
                     backgroundImage: `url(${partner.logo})`,
                     backgroundSize: partner.name === "Croma" ? '95% auto' : ["Style Union", "Lifestyle", "Walkway", "McDonald's"].includes(partner.name) ? '70% auto' : 'cover',
-                    backgroundPosition: 'center',
+                    backgroundPosition: partner.name === "Croma" ? 'center 40%' : 'center',
                     backgroundRepeat: 'no-repeat',
                     backgroundColor: ["Style Union", "Lifestyle", "Walkway", "McDonald's", "Croma"].includes(partner.name) ? '#ffffff' : undefined,
                   } : {}}
